@@ -7,4 +7,3 @@ import(
 func Test() {
 	fmt.Println("test");
 }
-
