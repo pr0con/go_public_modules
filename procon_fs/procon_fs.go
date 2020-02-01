@@ -4,6 +4,7 @@ import(
 	"fmt"
 )
 
-func Test() {
-	fmt.Println("test");
+
+func Load() {
+	fmt.Println("Module procon_fs loaded...");
 }
