@@ -1,6 +1,7 @@
 package procon_data
 
 import(
+	"fmt"
 	"github.com/gorilla/websocket"
 )
 
