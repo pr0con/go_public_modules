@@ -44,4 +44,3 @@ func NewPool() *Pool {
         Clients:    make(map[*FatClient]bool),
     }
 }
-
