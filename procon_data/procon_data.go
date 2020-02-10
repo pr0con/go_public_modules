@@ -59,7 +59,8 @@ func (pool *Pool) Start() {
 		    	fmt.Println("Size of Connection Pool: ", len(pool.Clients))
 		    	break;
 	        default:
-	        	break;     
+	        	break;  
+	    }   
 	}		
 }
 
