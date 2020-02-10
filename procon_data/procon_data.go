@@ -6,6 +6,8 @@ import(
 )
 
 
+
+/* Websocket Message Data */
 type Msg struct {
 	Jwt string `json:"jwt"`
 	Type string `json:"type"`
@@ -21,3 +23,25 @@ func SendMsg(j string, t string, d string, c *websocket.Conn) {
 	//mm, _ := json.Marshal(m);
 	//fmt.Println(string(mm));
 }
+
+/* Websocket Pool Objects */
+type FatClient struct {
+    Id  string
+    Conn *websocket.Conn
+    Pool *Pool
+}
+
+type Pool struct {
+    Register   chan *FatClient
+    Unregister chan *FatClient
+    Clients    map[*FatClient]bool
+}
+
+func NewPool() *Pool {
+    return &Pool{
+        Register:   make(chan *FatClient),
+        Unregister: make(chan *FatClient),
+        Clients:    make(map[*FatClient]bool),
+    }
+}
+
