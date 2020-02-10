@@ -44,3 +44,25 @@ func NewPool() *Pool {
         Clients:    make(map[*FatClient]bool),
     }
 }
+
+func (pool *Pool) Start() {
+	fmt.Println("Websocket Pool Starting...")
+	
+	for {
+        select {
+	        case client := <-pool.Register:
+	        	pool.Clients[client] = true
+	        	fmt.Println("Size of Connection Pool: ", len(pool.Clients))	        	
+	        	break;
+		    case client := <-pool.Unregister:
+		    	delete(pool.Clients, client)
+		    	fmt.Println("Size of Connection Pool: ", len(pool.Clients))
+		    	break;
+	        default:
+	        	break;     
+	}		
+}
+
+
+
+
