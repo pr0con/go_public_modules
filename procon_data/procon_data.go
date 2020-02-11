@@ -5,8 +5,6 @@ import(
 	"github.com/gorilla/websocket"
 )
 
-
-
 /* Websocket Message Data */
 type Msg struct {
 	Jwt string `json:"jwt"`
