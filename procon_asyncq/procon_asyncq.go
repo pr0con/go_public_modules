@@ -41,7 +41,6 @@ func (t *TaskWorker) Start() {
 			case task := <-t.TaskChannel:
 				fmt.Sprintf("Asynchronous task worker #%d is performing a task. \n", t.ID)
 				task.Perform()
-
 			}
 		}
 	}()

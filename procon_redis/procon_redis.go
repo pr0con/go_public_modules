@@ -54,7 +54,6 @@ func (t *RedisTask) Perform() {
 			break;
 		case "del-key":
 			RedisDel(t.tk)
-			t.ws.Close()
 			break;
 		default:
 			break;
