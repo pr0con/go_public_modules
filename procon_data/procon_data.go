@@ -63,7 +63,3 @@ func (pool *Pool) Start() {
 	    }   
 	}		
 }
-
-
-
-
