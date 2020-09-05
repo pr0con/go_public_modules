@@ -17,7 +17,6 @@ type TaskWorker struct {
 	TaskWorkerQueue chan chan Task
 }
 
-
 func NewTaskWorker(id int, taskWorkerQueue chan chan Task) TaskWorker {
 	taskWorker := TaskWorker {
 		ID:              id,
